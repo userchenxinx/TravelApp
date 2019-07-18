@@ -5,5 +5,5 @@ spring:
     username: root
     password: qfjava
 mybatis:
-  type-aliases-package: com.xcy.pojo
+  type-aliases-package: com.pinming.travelapp.pojo
   mapper-locations: classpath*:/mapper/*.xml
