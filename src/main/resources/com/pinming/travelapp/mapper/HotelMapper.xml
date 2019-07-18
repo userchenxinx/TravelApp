@@ -3,6 +3,8 @@
 <mapper namespace="com.pinming.travelapp.mapper.HotelMapper">
 
     <resultMap id="BaseResultMap" type="com.pinming.travelapp.pojo.HotelDetail">
+
+    <resultMap id="BaseResultMap" type="com.pinming.travelapp.pojo.HotelDetail">
         <result column="id" jdbcType="INTEGER" property="id" />
         <result column="address" jdbcType="VARCHAR" property="address" />
         <result column="hotelname" jdbcType="VARCHAR" property="hotelname" />
@@ -14,6 +16,5 @@
         <result column="starttime" jdbcType="DATE" property="starttime" />
         <result column="stoptime" jdbcType="DATE" property="stoptime" />
     </resultMap>
-
 
 </mapper>
