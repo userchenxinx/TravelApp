@@ -1,4 +1,4 @@
 package com.pinming.travelapp.service;
 
-public class Demo {
+public class Demo1 {
 }
