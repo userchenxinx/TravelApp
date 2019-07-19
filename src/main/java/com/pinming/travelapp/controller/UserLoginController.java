@@ -65,7 +65,7 @@ public class UserLoginController {
         int result = userService.registerUser(user);
 
         System.out.println("插入数据后是否可以获取一个值：" + result);
-        return  new JsonBean(1,null);
+        return  new JsonBean(1,"添加数据成功");
         /*return result > 0 ? "success" : "fail";*/
     }
 }
