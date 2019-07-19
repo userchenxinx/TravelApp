@@ -1,20 +1,15 @@
-package com.pinming.travelapp.pojo;
+package com.pinming.travelapp.model;
 
-import io.swagger.annotations.ApiModelProperty;
+
 
 import java.util.Date;
 
-public class User {
-    private Integer id;
+public class Person {
 
-    private String img;
 
-    @ApiModelProperty(value = "这是普通用户登录的用户名")
     private String username;
 
-    @ApiModelProperty(value = "这是普通登录的用户名密码")
-    private String password;
-
+    private String img;
     private String sex;
 
     private String tel;
@@ -29,12 +24,12 @@ public class User {
 
     private String email;
 
-    public Integer getId() {
-        return id;
+    public String getUsername() {
+        return username;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getImg() {
@@ -45,28 +40,12 @@ public class User {
         this.img = img;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
-
     public String getSex() {
         return sex;
     }
 
     public void setSex(String sex) {
-        this.sex = sex == null ? null : sex.trim();
+        this.sex = sex;
     }
 
     public String getTel() {
@@ -74,7 +53,7 @@ public class User {
     }
 
     public void setTel(String tel) {
-        this.tel = tel == null ? null : tel.trim();
+        this.tel = tel;
     }
 
     public Date getBirthday() {
@@ -90,7 +69,7 @@ public class User {
     }
 
     public void setIdcard(String idcard) {
-        this.idcard = idcard == null ? null : idcard.trim();
+        this.idcard = idcard;
     }
 
     public String getPlace() {
@@ -98,7 +77,7 @@ public class User {
     }
 
     public void setPlace(String place) {
-        this.place = place == null ? null : place.trim();
+        this.place = place;
     }
 
     public String getCity() {
@@ -106,7 +85,7 @@ public class User {
     }
 
     public void setCity(String city) {
-        this.city = city == null ? null : city.trim();
+        this.city = city;
     }
 
     public String getEmail() {
@@ -114,6 +93,6 @@ public class User {
     }
 
     public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
+        this.email = email;
     }
 }
