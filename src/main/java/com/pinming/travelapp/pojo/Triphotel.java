@@ -13,6 +13,26 @@ public class Triphotel {
 
     private String detail;
 
+    private String grade;
+
+    private String city;
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
     public Integer getId() {
         return id;
     }

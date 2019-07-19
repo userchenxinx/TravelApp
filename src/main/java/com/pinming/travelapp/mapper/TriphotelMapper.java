@@ -1,19 +1,24 @@
 package com.pinming.travelapp.mapper;
 
 import com.pinming.travelapp.pojo.Triphotel;
+import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
+@Mapper
 public interface TriphotelMapper {
-    int deleteByPrimaryKey(Integer id);
 
-    int insert(Triphotel record);
+    /**
+     * 展示所有出行专题下的酒店
+     * @return map
+     */
+    public List<Triphotel> selectAll();
 
-    int insertSelective(Triphotel record);
+    /**
+     * 通过id查询指定的酒店
+     * @param id
+     * @return triphotel id
+     */
+    public Triphotel findById(int id);
 
-    Triphotel selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(Triphotel record);
-
-    int updateByPrimaryKeyWithBLOBs(Triphotel record);
-
-    int updateByPrimaryKey(Triphotel record);
 }
