@@ -18,7 +18,7 @@ public class ProjectConfig {
     public static final int CARTMAXGOODS=200;
 
     //Redis信息
-    public static final String REDISHOST="39.105.189.141";
+    public static final String REDISHOST="101.132.39.73";
     public static final int REDISPORT=6380;
     public static final String REDISPASS="qfjava";
 
