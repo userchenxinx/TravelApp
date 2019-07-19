@@ -1,0 +1,38 @@
+package com.pinming.travelapp.model;
+
+
+
+/**
+ *@Author feri
+ *@Date Created in 2019/6/14 14:46
+ */
+
+public class LoginToken {
+    private String id;
+    private String phone;
+    private int uid;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public int getUid() {
+        return uid;
+    }
+
+    public void setUid(int uid) {
+        this.uid = uid;
+    }
+}
