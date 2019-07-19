@@ -7,6 +7,7 @@ import com.pinming.travelapp.util.JsonBean;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +20,7 @@ import java.util.List;
  **/
 @RestController
 @RequestMapping("/triphotel")
+@CrossOrigin //跨域注解
 public class TriphotelController {
 
     @Autowired
