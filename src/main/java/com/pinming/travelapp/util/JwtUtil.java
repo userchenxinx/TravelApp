@@ -1,14 +1,14 @@
 package com.pinming.travelapp.util;
 
-import com.qfedu.common.config.ProjectConfig;
-import com.qfedu.common.util.TimeUtil;
+import com.pinming.travelapp.common.ProjectConfig;
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
-import java.util.Base64;
 import java.util.Date;
 
 /**
@@ -23,8 +23,8 @@ public class JwtUtil {
      * content 存储的内容 */
     public static String createJWT(String id,String content){
         //获取指定签名加密算法的枚举对象
-        SignatureAlgorithm algorithm=SignatureAlgorithm.HS256;
-        JwtBuilder builder=Jwts.builder();
+        SignatureAlgorithm algorithm= SignatureAlgorithm.HS256;
+        JwtBuilder builder= Jwts.builder();
         builder.setId(id);
         builder.setSubject(content); //sub
         builder.setIssuedAt(new Date());//开始时间

@@ -1,5 +1,6 @@
 package com.pinming.travelapp.util;
-import com.pinming.travelapp.common.config.ProjectConfig;
+
+import com.pinming.travelapp.common.ProjectConfig;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
