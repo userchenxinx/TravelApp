@@ -2,17 +2,9 @@ package com.pinming.travelapp.mapper;
 
 import com.pinming.travelapp.pojo.Trip;
 
+import java.util.List;
+
 public interface TripMapper {
 
-    int deleteByPrimaryKey(Integer id);
-
-    int insert(Trip record);
-
-    int insertSelective(Trip record);
-
-    Trip selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(Trip record);
-
-    int updateByPrimaryKey(Trip record);
+    public List<Trip> selectAll();
 }

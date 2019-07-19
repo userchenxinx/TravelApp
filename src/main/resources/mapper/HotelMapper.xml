@@ -17,4 +17,18 @@
         <result column="stoptime" jdbcType="DATE" property="stoptime" />
     </resultMap>
 
+    <sql id="hotelSql">
+        SELECT * FROM t_hoteldetail_z hd INNER JOIN t_hoteltype_z h on hd.hotelid = h.id
+    </sql>
+
+    <sql id="whereSql">
+        <where>
+            <if test="address"></if>
+        </where>
+    </sql>
+
+    <select id="findHotel" resultType="com.pinming.travelapp.pojo.HotelDetail">
+
+    </select>
+
 </mapper>

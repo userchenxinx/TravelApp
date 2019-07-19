@@ -69,6 +69,7 @@
             <artifactId>jedis</artifactId>
         </dependency>
 
+        <!--jackson-->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
