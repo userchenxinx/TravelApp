@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pinming.travelapp.mapper.TravelLogMapper">
+  <resultMap id="travelLogMap" type="com.pinming.travelapp.pojo.TravelLog">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="comment" jdbcType="VARCHAR" property="comment" />
+    <result column="headimg" jdbcType="VARCHAR" property="headimg" />
+    <result column="imgpath" jdbcType="VARCHAR" property="imgpath" />
+  </resultMap>
+  <!--<insert id="insertLog" parameterType="travelLog">
+    insert into t_travellog_d (id, address, comment, 
+      headimg, imgpath)
+    values (#{id,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, #{comment,jdbcType=VARCHAR}, 
+      #{headimg,jdbcType=VARCHAR}, #{imgpath,jdbcType=VARCHAR})
+  </insert>-->
+  <select id="findAll" resultMap="travelLogMap">
+    select * from t_travellog_d
+  </select>
+
+</mapper>
