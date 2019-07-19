@@ -7,6 +7,8 @@ import java.util.Date;
 public class User {
     private Integer id;
 
+    private String img;
+
     @ApiModelProperty(value = "这是普通用户登录的用户名")
     private String username;
 
@@ -33,6 +35,14 @@ public class User {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public String getUsername() {

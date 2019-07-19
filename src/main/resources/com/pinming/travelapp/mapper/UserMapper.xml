@@ -3,6 +3,7 @@
 <mapper namespace="com.pinming.travelapp.mapper.UserMapper">
   <resultMap id="BaseResultMap" type="com.pinming.travelapp.pojo.User">
     <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="img" jdbcType="VARCHAR" property="img" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="sex" jdbcType="VARCHAR" property="sex" />
@@ -14,7 +15,7 @@
     <result column="email" jdbcType="VARCHAR" property="email" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, username, password, sex, tel, birthday, IDcard, place, city, email
+    id, img,username, password, sex, tel, birthday, IDcard, place, city, email
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -27,10 +28,10 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.pinming.travelapp.pojo.User">
-    insert into user (id, username, password, 
+    insert into user (id,img, username, password,
       sex, tel, birthday, IDcard, 
       place, city, email)
-    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{img,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
       #{sex,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, #{idcard,jdbcType=VARCHAR}, 
       #{place,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR})
   </insert>
@@ -39,6 +40,9 @@
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
+      </if>
+      <if test="img != null">
+        img,
       </if>
       <if test="username != null">
         username,
@@ -72,6 +76,9 @@
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
+      <if test="img != null">
+        #{img,jdbcType=VARCHAR},
+      </if>
       <if test="username != null">
         #{username,jdbcType=VARCHAR},
       </if>
@@ -104,6 +111,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.pinming.travelapp.pojo.User">
     update user
     <set>
+      <if test="img != null">
+        img = #{img,jdbcType=VARCHAR},
+      </if>
       <if test="username != null">
         username = #{username,jdbcType=VARCHAR},
       </if>
@@ -136,7 +146,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.pinming.travelapp.pojo.User">
     update user
-    set username = #{username,jdbcType=VARCHAR},
+    set  img = #{img,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       sex = #{sex,jdbcType=VARCHAR},
       tel = #{tel,jdbcType=VARCHAR},
