@@ -3,16 +3,22 @@
 <mapper namespace="com.pinming.travelapp.mapper.HotelMapper">
 
     <resultMap id="ResultMap" type="com.pinming.travelapp.pojo.HotelDetail">
-        <result column="id" jdbcType="INTEGER" property="id" />
+        <id column="id" property="id"></id>
         <result column="address" jdbcType="VARCHAR" property="address" />
         <result column="hotelname" jdbcType="VARCHAR" property="hotelname" />
         <result column="hotelid" jdbcType="INTEGER" property="hotelid" />
         <result column="hotelprice" jdbcType="INTEGER" property="hotelprice" />
         <result column="count" jdbcType="INTEGER" property="count" />
         <result column="imgpath" jdbcType="VARCHAR" property="imgpath" />
-        <result column="detail" jdbcType="VARCHAR" property="detail" />
         <result column="starttime" jdbcType="DATE" property="starttime" />
         <result column="stoptime" jdbcType="DATE" property="stoptime" />
+
+        <association property="hotelDetailD" javaType="com.pinming.travelapp.pojo.HotelDetailD">
+            <id property="id" column="hid"></id>
+            <result property="hoteldetail" column="hoteldetail"></result>
+            <result property="hoteldetailid" column="hoteldetailid"></result>
+            <result property="hoteltime" column="hoteltime"></result>
+        </association>
     </resultMap>
 
     <sql id="hotelSql">
@@ -30,11 +36,17 @@
             </if>
         </where>
 
+
     </sql>
 
     <select id="findHotel" resultMap="ResultMap" parameterType="com.pinming.travelapp.pojo.HotelDetail">
         <include refid="hotelSql"></include>
         <include refid="whereSql"></include>
+
+    </select>
+
+    <select id="findDetailMessage" parameterType="int" resultMap="ResultMap">
+        SELECT h.*,hd.id AS hid,hd.* FROM t_hoteldetail_z h INNER JOIN t_hotel_detail_z hd ON h.id = hd.hoteldetailid WHERE h.id = #{id}
     </select>
 
 </mapper>

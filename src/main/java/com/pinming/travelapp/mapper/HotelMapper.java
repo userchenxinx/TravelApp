@@ -16,4 +16,6 @@ public interface HotelMapper {
 
 
     List<HotelDetail> findHotel(HotelDetail hotelDetail);
+
+    HotelDetail findDetailMessage(int id);
 }

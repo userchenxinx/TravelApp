@@ -29,4 +29,10 @@ public class HotelServiceImpl implements HotelService{
         List<HotelDetail> hotel = mapper.findHotel(hotelDetail);
         return hotel;
     }
+
+    @Override
+    public HotelDetail findDetailMessage(int id) {
+        HotelDetail detailMessage = mapper.findDetailMessage(id);
+        return detailMessage;
+    }
 }

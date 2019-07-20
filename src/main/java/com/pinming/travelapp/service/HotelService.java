@@ -9,4 +9,7 @@ public interface HotelService {
     List<Hotel> findAllHotel();
 
     List<HotelDetail> findHotel(HotelDetail hotelDetail);
+
+    //查询详情酒店
+    HotelDetail findDetailMessage(int id);
 }
