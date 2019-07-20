@@ -56,23 +56,23 @@ public class TriphotelServiceImpl implements TriphotelService {
     }
 
     /**
-     * 通过price升序查询旅馆
-     * @param price
+     * 通过city升序查询旅馆
+     * @param city
      * @return
      */
     @Override
-    public Triphotel selectTriphotelByPrice(String price) {
+    public List<Triphotel> selectTriphotelByCity(String city) {
 
-        return triphotelMapper.selectByPrice(price);
+        return triphotelMapper.selectByCity(city);
     }
 
     /**
-     * 通过price降序查询旅馆
-     * @param price
+     * 通过city降序查询旅馆
+     * @param city
      * @return
      */
     @Override
-    public Triphotel selectTriphotelByPriceDesc(String price) {
-        return triphotelMapper.selectByPriceDesc(price);
+    public List<Triphotel> selectTriphotelByCityDesc(String city) {
+        return triphotelMapper.selectByCityDesc(city);
     }
 }

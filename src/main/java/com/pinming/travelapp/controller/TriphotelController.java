@@ -46,23 +46,23 @@ public class TriphotelController {
     }
 
     @RequestMapping(value = "/asc.do", method = RequestMethod.POST)
-    @ApiOperation("该方法是通过price升序获取出行专题下的旅馆信息的方法")
-    public JsonBean findByPrice(String price, Model model){
+    @ApiOperation("该方法是通过city升序获取出行专题下的旅馆信息的方法")
+    public JsonBean findByCity(String city, Model model){
 
-        Triphotel triphotel = triphotelService.selectTriphotelByPrice(price);
-        model.addAttribute("triphotel", triphotel);
+        List<Triphotel> ascList = triphotelService.selectTriphotelByCity(city);
+        model.addAttribute("ascList", ascList);
 
-        return new JsonBean(1, triphotel);
+        return new JsonBean(1, ascList);
     }
 
     @RequestMapping(value = "/desc.do", method = RequestMethod.POST)
-    @ApiOperation("该方法是通过price升序获取出行专题下的旅馆信息的方法")
-    public JsonBean findByPricedesc(String price, Model model){
+    @ApiOperation("该方法是通过city升序获取出行专题下的旅馆信息的方法")
+    public JsonBean findByCitydesc(String city, Model model){
 
-        Triphotel triphotel = triphotelService.selectTriphotelByPriceDesc(price);
-        model.addAttribute("triphotel", triphotel);
+        List<Triphotel> descList = triphotelService.selectTriphotelByCityDesc(city);
+        model.addAttribute("descList", descList);
 
-        return new JsonBean(1, triphotel);
+        return new JsonBean(1, descList);
     }
 
 }

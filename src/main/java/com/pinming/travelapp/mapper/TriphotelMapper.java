@@ -22,17 +22,17 @@ public interface TriphotelMapper {
     public Triphotel findById(int id);
 
     /**
-     * 通过price升序查询酒店
-     * @param price
+     * 通过city升序查询酒店
+     * @param city
      * @return Triphotel
      */
-    public Triphotel selectByPrice(String price);
+    public List<Triphotel> selectByCity(String city);
 
     /**
-     * 通过price降序查询酒店
-     * @param price
+     * 通过city降序查询酒店
+     * @param city
      * @return
      */
-    public Triphotel selectByPriceDesc(String price);
+    public List<Triphotel> selectByCityDesc(String city);
 
 }

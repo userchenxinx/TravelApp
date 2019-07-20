@@ -9,11 +9,11 @@
         select * from t_c_triphotel where id=#{id}
     </select>
 
-    <select id="selectByPrice" resultType="com.pinming.travelapp.pojo.Triphotel" parameterType="string">
-        select * from t_c_triphotel order by price asc
+    <select id="selectByCity" resultType="map" parameterType="string">
+        select * from t_c_triphotel order by city asc
     </select>
 
-    <select id="selectByPriceDesc" resultType="com.pinming.travelapp.pojo.Triphotel" parameterType="string">
-        select * from t_c_triphotel order by price desc
+    <select id="selectByCityDesc" resultType="map" parameterType="string">
+        select * from t_c_triphotel order by city desc
     </select>
 </mapper>
