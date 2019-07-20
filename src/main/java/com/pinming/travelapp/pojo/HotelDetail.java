@@ -17,11 +17,22 @@ public class HotelDetail {
 
     private String imgpath;
 
-    private String detail;
 
     private Date starttime;
 
     private Date stoptime;
+
+
+    //酒店和酒店详情  一对一关系
+    private HotelDetailD hotelDetailD;
+
+    public HotelDetailD getHotelDetailD() {
+        return hotelDetailD;
+    }
+
+    public void setHotelDetailD(HotelDetailD hotelDetailD) {
+        this.hotelDetailD = hotelDetailD;
+    }
 
     public Integer getId() {
         return id;
@@ -79,13 +90,7 @@ public class HotelDetail {
         this.imgpath = imgpath;
     }
 
-    public String getDetail() {
-        return detail;
-    }
 
-    public void setDetail(String detail) {
-        this.detail = detail;
-    }
 
     public Date getStarttime() {
         return starttime;

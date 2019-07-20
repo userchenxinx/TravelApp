@@ -7,3 +7,6 @@ spring:
 mybatis:
   type-aliases-package: com.pinming.travelapp.pojo
   mapper-locations: classpath*:/mapper/*.xml
+
+
+

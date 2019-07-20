@@ -15,4 +15,15 @@
   <select id="findByUname" resultType="com.pinming.travelapp.model.Person">
     select username, sex,tel,birthday,IDcard,place,city,email from user where username=#{username}
   </select>
+  <select id="findAdds" resultType="com.pinming.travelapp.pojo.Takeadds">
+    select * from t_takeadds
+  </select>
+  <insert id="addAdds"  parameterType="takeadds" >
+    insert into t_takeadds values (null, #{name},#{phone},#{area},#{detailadds})
+  </insert>
+
+
+  <update id="update" parameterType="takeadds">
+    update t_takeadds set name=#{name},phone=#{phone},area=#{area},detailadds=#{detailadds} where id=#{id}
+  </update>
 </mapper>
