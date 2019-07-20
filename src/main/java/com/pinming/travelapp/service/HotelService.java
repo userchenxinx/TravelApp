@@ -8,5 +8,5 @@ import java.util.List;
 public interface HotelService {
     List<Hotel> findAllHotel();
 
-    List<HotelDetail> findHotel(String address, String hotelname);
+    List<HotelDetail> findHotel(HotelDetail hotelDetail);
 }

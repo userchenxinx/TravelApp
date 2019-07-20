@@ -23,11 +23,10 @@ public class HotelServiceImpl implements HotelService{
     }
 
     @Override
-    public List<HotelDetail> findHotel(String address, String hotelname) {
-        Map<String,String> map = new HashMap<String,String>();
-        map.put("address",address);
-        map.put("hotelname",hotelname);
-        mapper.findHotel(map);
-        return null;
+    public List<HotelDetail> findHotel(HotelDetail hotelDetail) {
+
+
+        List<HotelDetail> hotel = mapper.findHotel(hotelDetail);
+        return hotel;
     }
 }

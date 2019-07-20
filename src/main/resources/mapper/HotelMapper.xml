@@ -2,9 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pinming.travelapp.mapper.HotelMapper">
 
-
-
-    <resultMap id="BaseResultMap" type="com.pinming.travelapp.pojo.HotelDetail">
+    <resultMap id="ResultMap" type="com.pinming.travelapp.pojo.HotelDetail">
         <result column="id" jdbcType="INTEGER" property="id" />
         <result column="address" jdbcType="VARCHAR" property="address" />
         <result column="hotelname" jdbcType="VARCHAR" property="hotelname" />
@@ -23,12 +21,20 @@
 
     <sql id="whereSql">
         <where>
-            <if test="address"></if>
+            <if test="address !=null and address != ''">
+                AND address LIKE '%${address}%'
+            </if>
+
+            <if test="hotelname !=null and hotelname != ''">
+                AND hotelname LIKE '%${hotelname}%'
+            </if>
         </where>
+
     </sql>
 
-    <select id="findHotel" resultType="com.pinming.travelapp.pojo.HotelDetail">
-
+    <select id="findHotel" resultMap="ResultMap" parameterType="com.pinming.travelapp.pojo.HotelDetail">
+        <include refid="hotelSql"></include>
+        <include refid="whereSql"></include>
     </select>
 
 </mapper>
