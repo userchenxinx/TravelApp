@@ -10,10 +10,10 @@
     </select>
 
     <select id="selectByCity" resultType="map" parameterType="string">
-        select * from t_c_triphotel order by city asc
+        select * from t_c_triphotel order by convert( city  using gbk) asc
     </select>
 
     <select id="selectByCityDesc" resultType="map" parameterType="string">
-        select * from t_c_triphotel order by city desc
+       select * from t_c_triphotel order by convert( city  using gbk) desc
     </select>
 </mapper>

@@ -1,19 +1,19 @@
 package com.pinming.travelapp.mapper;
 
 import com.pinming.travelapp.pojo.Comment;
+import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
+@Mapper
 public interface CommentMapper {
-    int deleteByPrimaryKey(Integer id);
 
-    int insert(Comment record);
+    /**
+     * 查询所有的信息
+     * @return map
+     */
+    public List<Comment> selectAll();
 
-    int insertSelective(Comment record);
 
-    Comment selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(Comment record);
-
-    int updateByPrimaryKeyWithBLOBs(Comment record);
-
-    int updateByPrimaryKey(Comment record);
 }
