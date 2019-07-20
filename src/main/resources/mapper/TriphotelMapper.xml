@@ -8,4 +8,12 @@
     <select id="findById" resultType="com.pinming.travelapp.pojo.Triphotel" parameterType="int">
         select * from t_c_triphotel where id=#{id}
     </select>
+
+    <select id="selectByPrice" resultType="com.pinming.travelapp.pojo.Triphotel" parameterType="string">
+        select * from t_c_triphotel order by price asc
+    </select>
+
+    <select id="selectByPriceDesc" resultType="com.pinming.travelapp.pojo.Triphotel" parameterType="string">
+        select * from t_c_triphotel order by price desc
+    </select>
 </mapper>

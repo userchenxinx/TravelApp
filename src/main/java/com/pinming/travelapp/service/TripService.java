@@ -15,4 +15,5 @@ public interface TripService {
      * @return list
      */
     public List<Trip> selectTripAll();
+    public List<Trip> selectTripAll(int page, int pageSize);
 }

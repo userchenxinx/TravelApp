@@ -54,4 +54,25 @@ public class TriphotelServiceImpl implements TriphotelService {
 
         return triphotelMapper.findById(id);
     }
+
+    /**
+     * 通过price升序查询旅馆
+     * @param price
+     * @return
+     */
+    @Override
+    public Triphotel selectTriphotelByPrice(String price) {
+
+        return triphotelMapper.selectByPrice(price);
+    }
+
+    /**
+     * 通过price降序查询旅馆
+     * @param price
+     * @return
+     */
+    @Override
+    public Triphotel selectTriphotelByPriceDesc(String price) {
+        return triphotelMapper.selectByPriceDesc(price);
+    }
 }

@@ -17,8 +17,9 @@ public interface TravelService {
     public Travel selectTravelById(int id);
 
     /**
-     * 查询所有travel
+     * 同过分页查询所有travel
      * @return travel
      */
     public List<Travel> selectAllTravel();
+    public List<Travel> selectAllTravel(int page, int pageSize);
 }

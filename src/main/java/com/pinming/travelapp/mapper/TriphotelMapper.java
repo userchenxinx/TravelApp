@@ -21,4 +21,18 @@ public interface TriphotelMapper {
      */
     public Triphotel findById(int id);
 
+    /**
+     * 通过price升序查询酒店
+     * @param price
+     * @return Triphotel
+     */
+    public Triphotel selectByPrice(String price);
+
+    /**
+     * 通过price降序查询酒店
+     * @param price
+     * @return
+     */
+    public Triphotel selectByPriceDesc(String price);
+
 }

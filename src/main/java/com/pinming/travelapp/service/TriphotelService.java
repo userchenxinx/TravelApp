@@ -23,4 +23,18 @@ public interface TriphotelService {
      * @return Triphotel id
      */
     public Triphotel findTriphotelById(int id);
+
+    /**
+     * 通过price升序查询酒店信息
+     * @param price
+     * @return Triphotel
+     */
+    public Triphotel selectTriphotelByPrice(String price);
+
+    /**
+     * 通过price降序查询酒店信息
+     * @param price
+     * @return Triphotel
+     */
+    public Triphotel selectTriphotelByPriceDesc(String price);
 }

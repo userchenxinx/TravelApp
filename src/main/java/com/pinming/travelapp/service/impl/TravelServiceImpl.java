@@ -1,5 +1,6 @@
 package com.pinming.travelapp.service.impl;
 
+import com.github.pagehelper.PageHelper;
 import com.pinming.travelapp.mapper.TravelMapper;
 import com.pinming.travelapp.pojo.Travel;
 import com.pinming.travelapp.service.TravelService;
@@ -34,5 +35,19 @@ public class TravelServiceImpl implements TravelService {
     @Override
     public List<Travel> selectAllTravel() {
         return travelMapper.selectAll();
+    }
+
+    /**
+     * 通过分页展示所有信息
+     * @param page
+     * @param pageSize
+     * @return
+     */
+    @Override
+    public List<Travel> selectAllTravel(int page, int pageSize) {
+        PageHelper.startPage(page,pageSize);
+        List<Travel> list = travelMapper.selectAll();
+
+        return list;
     }
 }
