@@ -15,5 +15,4 @@ public interface CommentMapper {
     public List<Comment> selectAll();
 
 
-
 }

@@ -45,7 +45,7 @@ public class TriphotelController {
         return new JsonBean(1, triphotel);
     }
 
-    @RequestMapping(value = "/asc.do", method = RequestMethod.POST)
+    @RequestMapping(value = "/asc.do", method = RequestMethod.GET)
     @ApiOperation("该方法是通过city升序获取出行专题下的旅馆信息的方法")
     public JsonBean findByCity(String city, Model model){
 
@@ -55,7 +55,7 @@ public class TriphotelController {
         return new JsonBean(1, ascList);
     }
 
-    @RequestMapping(value = "/desc.do", method = RequestMethod.POST)
+    @RequestMapping(value = "/desc.do", method = RequestMethod.GET)
     @ApiOperation("该方法是通过city升序获取出行专题下的旅馆信息的方法")
     public JsonBean findByCitydesc(String city, Model model){
 
