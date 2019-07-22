@@ -13,8 +13,8 @@ public class UserServiceImpl implements UserService {
    private UserMapper userDao;
 
     @Override
-    public boolean LoginUser(User user) {
-        int count = userDao.LoginUser(user);
+    public boolean LoginUser(String username , String password) {
+        int count = userDao.LoginUser(username , password);
         return count > 0 ? true :false;
     }
 
@@ -27,5 +27,35 @@ public class UserServiceImpl implements UserService {
     @Override
     public int registerUser(User user) {
         return userDao.insertSelective(user);
+    }
+
+    @Override
+    public boolean checkUserTel(String tel) {
+       int count = userDao.checkUserTel(tel);
+       return  count >0?true :false;
+    }
+
+    @Override
+    public void updateUserValidateCodeByPhone(User user) {
+        userDao.updateCodeByphone(user);
+    }
+
+    @Override
+    public boolean validateByTelCode(User user) {
+        int count = userDao.validateTelCode(user);
+        return  count > 0 ? true:false;
+    }
+
+    @Override
+    public boolean addUserValidateCodeByPhone(User user) {
+        int count = userDao.insert(user);
+        return  count > 0 ? true:false;
+    }
+
+    @Override
+    public void updateUserPassword(User user) {
+        userDao.updatePassword(user);
+
+
     }
 }

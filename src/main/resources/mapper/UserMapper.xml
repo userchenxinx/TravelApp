@@ -13,9 +13,10 @@
     <result column="place" jdbcType="VARCHAR" property="place" />
     <result column="city" jdbcType="VARCHAR" property="city" />
     <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
   </resultMap>
   <sql id="Base_Column_List">
-    id,img, username, password, sex, tel, birthday, IDcard, place, city, email
+    id,img, username, password, sex, tel, birthday, IDcard, place, city, email,code
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -28,12 +29,9 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.pinming.travelapp.pojo.User">
-    insert into user (id,img, username, password,
-      sex, tel, birthday, IDcard, 
-      place, city, email)
-    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{sex,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, #{idcard,jdbcType=VARCHAR}, 
-      #{place,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR})
+    insert into user (
+       tel , code)
+    values ( #{tel,jdbcType=VARCHAR},#{code,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.pinming.travelapp.pojo.User">
     insert into user
@@ -71,6 +69,9 @@
       <if test="email != null">
         email,
       </if>
+      <if test="code != null">
+        code,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -105,6 +106,9 @@
       </if>
       <if test="email != null">
         #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -141,6 +145,9 @@
       <if test="email != null">
         email = #{email,jdbcType=VARCHAR},
       </if>
+      <if test="code!= null">
+        email = #{code,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -156,6 +163,7 @@
       place = #{place,jdbcType=VARCHAR},
       city = #{city,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR}
+      code = #{code,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 
@@ -173,11 +181,28 @@
     <sql id="userSql">
         select count(1) from user
     </sql>
-  <select id="LoginUser" parameterType="com.pinming.travelapp.pojo.User" resultType="int">
+  <select id="LoginUser" parameterType="string" resultType="int">
       select count(1)  from user where username = #{username} and password = #{password}
   </select>
   
   <select id="checkUserName" parameterType="string" resultType="int">
           select count(1)  from  user where username = #{username}
   </select>
+
+  <select id="checkUserTel" parameterType="string" resultType="int">
+          select count(1)  from  user where tel = #{tel}
+  </select>
+  
+  <select id="validateTelCode" resultType="int"  parameterType="com.pinming.travelapp.pojo.User">
+      select count(1)  from user where tel = #{tel} and code =#{code}
+  </select>
+  
+  <update id="updateCodeByphone" parameterType="com.pinming.travelapp.pojo.User">
+       update user set code = #{code} where tel = #{tel}
+  </update>
+
+  <update id="updatePassword"  parameterType="com.pinming.travelapp.pojo.User"  >
+      update  user set password = #{password} where code = #{code}
+  </update>
+
 </mapper>

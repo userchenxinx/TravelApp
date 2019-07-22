@@ -1,5 +1,6 @@
 package com.pinming.travelapp.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Date;
@@ -19,6 +20,7 @@ public class User {
 
     private String tel;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH-mm-ss",timezone = "GMT+8")
     private Date birthday;
 
     private String idcard;
@@ -28,6 +30,8 @@ public class User {
     private String city;
 
     private String email;
+
+    private int code;
 
     public Integer getId() {
         return id;
@@ -115,5 +119,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email == null ? null : email.trim();
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
     }
 }

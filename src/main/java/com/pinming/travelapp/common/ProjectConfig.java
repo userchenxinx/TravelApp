@@ -43,8 +43,9 @@ public class ProjectConfig {
 
 
     //短信配置
-    public static final String SMSKEY="97245bbce1178f6b82233a8c631e4c76";
-    public static final String SMSTEMPID="164065";
+
+    public static final String SMSKEY="f56b6b6b7c75bccc808ef92c55f07342";
+    public static final String SMSTEMPID="174061";
 
     //邮箱相关配置
     public static final String EMAIL="lx_teach@163.com";
