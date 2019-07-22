@@ -22,4 +22,26 @@ import java.util.List;
         List<TravelLog> list = travelLogMapper.findAll();
         return list;
     }
+
+    @Override
+    public TravelLog findById(Integer id) {
+        TravelLog travelLog = travelLogMapper.findById(id);
+        return travelLog;
+    }
+
+    @Override
+    public TravelLog findByIdForUpdate(Integer tid) {
+        TravelLog travelLog = travelLogMapper.findByIdForUpdate(tid);
+        return travelLog;
+    }
+
+    @Override
+    public void saveAndFlush(Integer id) {
+        travelLogMapper.saveAndFlush(id);
+    }
+
+    @Override
+    public void delAndFlush(Integer id) {
+        travelLogMapper.delAndFlush(id);
+    }
 }

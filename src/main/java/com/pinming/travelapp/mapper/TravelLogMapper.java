@@ -13,4 +13,12 @@ import java.util.List;
 public interface TravelLogMapper {
 
     public List<TravelLog> findAll();
+
+   public TravelLog findById(Integer id);
+
+    TravelLog findByIdForUpdate(Integer tid);
+
+    void saveAndFlush(Integer id);
+
+    void delAndFlush(Integer id);
 }

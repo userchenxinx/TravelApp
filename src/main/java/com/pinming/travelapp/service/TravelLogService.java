@@ -11,4 +11,12 @@ import java.util.List;
 public interface TravelLogService {
 
     public List<TravelLog> findAll();
+
+    public TravelLog findById(Integer id);
+
+    public TravelLog findByIdForUpdate(Integer tid);
+
+    void saveAndFlush(Integer id);
+
+    void delAndFlush(Integer id);
 }
