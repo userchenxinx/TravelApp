@@ -21,7 +21,13 @@
   <insert id="addAdds"  parameterType="takeadds" >
     insert into t_takeadds values (null, #{name},#{phone},#{area},#{detailadds})
   </insert>
+ <delete id="delectAddr" parameterType="int">
+   delete  from t_takeadds where id=#{id}
+ </delete>
 
+  <select id="findById" parameterType="int" resultType="takeadds">
+    select * from t_takeadds where id=#{id}
+  </select>
 
   <update id="update" parameterType="takeadds">
     update t_takeadds set name=#{name},phone=#{phone},area=#{area},detailadds=#{detailadds} where id=#{id}

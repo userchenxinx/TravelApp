@@ -17,9 +17,16 @@ public interface UserMapper {
 
     int updateByPrimaryKey(User record);
     //
-    int LoginUser(User user);
+    int LoginUser(String username,String password);
 
-
+    int checkUserTel(String tel);
 
     int checkUserName(String username);
+
+    int  validateTelCode(User user);
+
+
+    void updateCodeByphone(User user);
+
+    void updatePassword(User user);
 }

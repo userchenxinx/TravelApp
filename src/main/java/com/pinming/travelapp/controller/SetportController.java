@@ -45,22 +45,35 @@ public class SetportController {
         return setportService.selectAdds();
     }
 
-    // 收件地址
+    // 添加收件地址
     @ApiOperation(value = "添加收件地址",notes = "添加收件地址")
     @ResponseBody
-    @PostMapping("/set/adds.do")
+    @GetMapping("/set/addadds.do")
     public JsonBean addAdds(Takeadds takeadds){
         setportService.addAdds(takeadds);
         return new  JsonBean(1,null);
     }
+    //  删除收件
+    @ApiOperation(value = "通过id删除收件地址",notes = "删除收件地址")
+    @ResponseBody
+    @GetMapping("/set/dele.do")
+    public R deleAddr(int id){
+        return setportService.deleAddrById(id);
 
+    }
 
     // 编辑收件地址
-    @ApiOperation(value = "编辑收件地址",notes = "编辑收件地址")
+    @ApiOperation(value = "通过id查找收件地址",notes = "查找收件地址")
+    @ResponseBody
+    @PostMapping("/set/findbyid.do")
+    public R findById(int id){
+        return setportService.findById(id);
+    }
+
+    @ApiOperation(value = "通过id编辑收件地址",notes = "编辑收件地址")
     @ResponseBody
     @PostMapping("/set/updateadds.do")
-    public JsonBean updateAddr(Takeadds takeadds){
-        setportService.updateAddr(takeadds);
-        return new JsonBean(1,null);
+    public R updateAddr(Takeadds takeadds){
+        return setportService.updateAddr(takeadds);
     }
 }

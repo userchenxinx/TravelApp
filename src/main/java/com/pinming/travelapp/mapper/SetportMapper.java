@@ -20,7 +20,9 @@ public interface SetportMapper {
     // 添加收件地址
     void addAdds(Takeadds takeadds);
 
+    // 删除收件地址
+    void delectAddr(int id);
     // 编辑收件地址
-
+    Takeadds findById(int id);
     void update(Takeadds takeadds);
 }

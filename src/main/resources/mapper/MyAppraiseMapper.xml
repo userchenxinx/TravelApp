@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pinming.travelapp.mapper.MyAppraiseMapper">
+  <resultMap id="BaseResultMap" type="com.pinming.travelapp.pojo.MyAppraise">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="ordernum" jdbcType="INTEGER" property="ordernum" />
+    <result column="imapath" jdbcType="VARCHAR" property="imapath" />
+    <result column="myappraise" jdbcType="VARCHAR" property="myappraise" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, ordernum, imapath, myappraise
+  </sql>
+  <select id="findAllAppr" resultType="com.pinming.travelapp.pojo.MyAppraise">
+    select ordernum, imapath, myappraise from t_myappr
+  </select>
+  <insert id="addAppr" parameterType="MyAppraise">
+    insert into t_myappr values (null,#{ordernum},#{imapath},#{myappraise})
+  </insert>
+</mapper>
