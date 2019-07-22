@@ -12,14 +12,21 @@
   <select id="findSet" resultType="com.pinming.travelapp.pojo.Setport">
     select * from t_setport
   </select>
-  <select id="findByUname" resultType="com.pinming.travelapp.model.Person">
-    select username, sex,tel,birthday,IDcard,place,city,email from user where username=#{username}
+  <select id="findByUname" resultType="com.pinming.travelapp.pojo.User">
+    select img username, sex,tel,birthday,IDcard,place,city,email from user where username=#{username}
   </select>
+    <select id="findByUid" parameterType="int" resultType="com.pinming.travelapp.pojo.User">
+    select * from user where id=#{id}
+  </select>
+
+    <update id="updateUser" parameterType="com.pinming.travelapp.pojo.User">
+    update user set img=#{img}, username=#{username},sex=#{sex},tel=#{tel},birthday=#{birthday},idcard=#{idcard},place=#{place},city=#{city},email=#{email} where id=#{id}
+  </update>
   <select id="findAdds" resultType="com.pinming.travelapp.pojo.Takeadds">
     select * from t_takeadds
   </select>
   <insert id="addAdds"  parameterType="takeadds" >
-    insert into t_takeadds values (null, #{name},#{phone},#{area},#{detailadds})
+    insert into t_takeadds values (null, #{name},#{phone},#{area}, #{areaCode},#{detailadds})
   </insert>
  <delete id="delectAddr" parameterType="int">
    delete  from t_takeadds where id=#{id}
@@ -30,6 +37,6 @@
   </select>
 
   <update id="update" parameterType="takeadds">
-    update t_takeadds set name=#{name},phone=#{phone},area=#{area},detailadds=#{detailadds} where id=#{id}
+    update t_takeadds set name=#{name},phone=#{phone},area=#{area},areaCode=#{areaCode},detailadds=#{detailadds} where id=#{id}
   </update>
 </mapper>

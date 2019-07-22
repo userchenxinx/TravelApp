@@ -8,6 +8,7 @@ public class Takeadds {
     private String phone;
 
     private String area;
+    private String areaCode;
 
     private String detailadds;
 
@@ -37,6 +38,14 @@ public class Takeadds {
 
     public String getArea() {
         return area;
+    }
+
+    public String getAreaCode() {
+        return areaCode;
+    }
+
+    public void setAreaCode(String areaCode) {
+        this.areaCode = areaCode;
     }
 
     public void setArea(String area) {

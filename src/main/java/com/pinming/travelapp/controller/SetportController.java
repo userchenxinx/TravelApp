@@ -2,6 +2,7 @@ package com.pinming.travelapp.controller;
 
 import com.pinming.travelapp.model.R;
 import com.pinming.travelapp.pojo.Takeadds;
+import com.pinming.travelapp.pojo.User;
 import com.pinming.travelapp.service.SetportService;
 import com.pinming.travelapp.util.JsonBean;
 import io.swagger.annotations.Api;
@@ -35,6 +36,20 @@ public class SetportController {
     @GetMapping("/set/personage.do")
     public R selectByUname(String username){
         return setportService.selectByUname(username);
+    }
+    // 修改个人资料
+    @ApiOperation(value = "通过id查找个人资料",notes = "通过id查找个人资料")
+    @ResponseBody
+    @GetMapping("/set/findbyuid.do")
+    public R selectByUid(int id){
+        return setportService.findByUid(id);
+    }
+    // 个人资料
+    @ApiOperation(value = "修改个人资料",notes = "修改个人资料")
+    @ResponseBody
+    @GetMapping("/set/uptaper.do")
+    public R updateUser(User user){
+        return setportService.updateUser(user);
     }
 
     // 收件地址

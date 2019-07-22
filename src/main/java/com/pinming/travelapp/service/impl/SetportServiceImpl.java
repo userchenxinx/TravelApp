@@ -35,6 +35,18 @@ public class SetportServiceImpl implements SetportService {
     }
 
     @Override
+    public R findByUid(int id) {
+        User user = setportMapper.findByUid(id);
+        return R.setOK("OK",user);
+    }
+
+    @Override
+    public R updateUser(User user) {
+        setportMapper.updateUser(user);
+        return R.setOK("修改成功",null);
+    }
+
+    @Override
     public R selectAdds() {
         List<Takeadds> list = setportMapper.findAdds();
         return R.setOK("OK",list);
