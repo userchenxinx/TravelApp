@@ -1,13 +1,17 @@
 package com.pinming.travelapp.controller;
 
-import com.github.pagehelper.PageInfo;
 import com.pinming.travelapp.pojo.Triphotel;
 import com.pinming.travelapp.service.TriphotelService;
 import com.pinming.travelapp.util.JsonBean;
+import com.pinming.travelapp.util.VPageInfo;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -18,6 +22,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/triphotel")
 @CrossOrigin //跨域注解
+@Api(value = "展示出行旅馆信息",tags ="出行旅馆信息")
 public class TriphotelController {
 
     @Autowired
@@ -25,13 +30,11 @@ public class TriphotelController {
 
     @RequestMapping(value = "/list.do", method = RequestMethod.GET)
     @ApiOperation("该方法是通过分页获取所有出行专题下的旅馆信息的方法")
-    public JsonBean listAll(Model model, @RequestParam(name = "page",required = false,defaultValue = "1") int page, @RequestParam(name = "pageSize",required = false,defaultValue = "3") int pageSize){
+    public JsonBean listAll(int page,Integer type, String info){
 
-        List<Triphotel> list = triphotelService.selectAllTriphotel(page, pageSize);
-        PageInfo<Triphotel> pageInfo = new PageInfo<>(list);
-        model.addAttribute("pageInfo",pageInfo);
+        VPageInfo<Triphotel> pageInfo = triphotelService.findByPage(page,type,info);
 
-        return new JsonBean(1,list);
+        return new JsonBean(1,pageInfo);
 
     }
 

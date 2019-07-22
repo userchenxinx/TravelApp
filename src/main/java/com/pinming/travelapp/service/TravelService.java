@@ -1,8 +1,7 @@
 package com.pinming.travelapp.service;
 
 import com.pinming.travelapp.pojo.Travel;
-
-import java.util.List;
+import com.pinming.travelapp.util.VPageInfo;
 
 /**
  * @author: jie
@@ -20,6 +19,13 @@ public interface TravelService {
      * 同过分页查询所有travel
      * @return travel
      */
-    public List<Travel> selectAllTravel();
-    public List<Travel> selectAllTravel(int page, int pageSize);
+    public VPageInfo<Travel> findByPage(int page);
+    public VPageInfo<Travel> findByPage(int page,Integer type, String info);
+
+
+    /**
+     * 通过id查询likes
+     * @param id
+     */
+    public Travel findTravelById(int id);
 }

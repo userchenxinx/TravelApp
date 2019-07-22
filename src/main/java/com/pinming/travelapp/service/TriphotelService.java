@@ -1,6 +1,7 @@
 package com.pinming.travelapp.service;
 
 import com.pinming.travelapp.pojo.Triphotel;
+import com.pinming.travelapp.util.VPageInfo;
 
 import java.util.List;
 
@@ -14,8 +15,8 @@ public interface TriphotelService {
      * 分页展示所有出行专题下的酒店
      * @return map
      */
-    public List<Triphotel> selectAllTriphotel();
-    public List<Triphotel> selectAllTriphotel(int page, int pageSize);
+    public VPageInfo<Triphotel> findByPage(int page);
+    public VPageInfo<Triphotel> findByPage(int page, Integer type, String info);
 
     /**
      * 通过id查询指定的酒店信息

@@ -2,6 +2,7 @@ package com.pinming.travelapp.mapper;
 
 import com.pinming.travelapp.pojo.Triphotel;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -12,7 +13,8 @@ public interface TriphotelMapper {
      * 展示所有出行专题下的酒店
      * @return map
      */
-    public List<Triphotel> selectAll();
+    public List<Triphotel> findByIndexAndSize(@Param("index") int index, @Param("size") int size, @Param("type") Integer type, @Param("info") String info);
+    public int count(@Param("type") Integer type, @Param("info") String info);
 
     /**
      * 通过id查询指定的酒店

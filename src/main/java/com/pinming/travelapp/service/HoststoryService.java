@@ -1,8 +1,7 @@
 package com.pinming.travelapp.service;
 
 import com.pinming.travelapp.pojo.Hoststory;
-
-import java.util.List;
+import com.pinming.travelapp.util.VPageInfo;
 
 /**
  * @author: jie
@@ -14,13 +13,21 @@ public interface HoststoryService {
      * 通过分页查询展示房东故事信息
      * @return
      */
-    public List<Hoststory> selectAllHoststory();
-    public List<Hoststory> selectAllHoststory(int page, int pageSize);
+    public VPageInfo<Hoststory> findByPage(int page);
+
+    public VPageInfo<Hoststory> findByPage(int page, Integer type, String info);
 
     /**
      * 通过id查询指定信息
      * @param id
      * @return
      */
-    public Hoststory finHoststoryById(int id);
+    public Hoststory findHoststoryById(int id);
+
+    /**
+     * 通过id查询指定likes信息
+     * @param id
+     * @return
+     */
+    public Hoststory findLikesById(int id);
 }

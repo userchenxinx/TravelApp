@@ -1,9 +1,9 @@
 package com.pinming.travelapp.service.impl;
 
-import com.github.pagehelper.PageHelper;
 import com.pinming.travelapp.mapper.TriphotelMapper;
 import com.pinming.travelapp.pojo.Triphotel;
 import com.pinming.travelapp.service.TriphotelService;
+import com.pinming.travelapp.util.VPageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,23 +25,38 @@ public class TriphotelServiceImpl implements TriphotelService {
      * @return
      */
     @Override
-    public List<Triphotel> selectAllTriphotel() {
+    public VPageInfo<Triphotel> findByPage(int page) {
 
-        return triphotelMapper.selectAll();
+        return null;
     }
 
     /**
      * 通过分页展示酒店信息
      * @param page
-     * @param pageSize
+     * @param type
      * @return
      */
     @Override
-    public List<Triphotel> selectAllTriphotel(int page, int pageSize) {
-        PageHelper.startPage(page,pageSize);
-        List<Triphotel> list = triphotelMapper.selectAll();
+    public VPageInfo<Triphotel> findByPage(int page, Integer type, String info) {
+        VPageInfo<Triphotel> pageInfo = new VPageInfo<Triphotel>();
+        pageInfo.setCurrentPage(page);
+        //设置总页数
+        int count = triphotelMapper.count(type, info);
+        int size = pageInfo.getPageSize();
+        int totalPage = 0;
+        if (count % size == 0){
+            totalPage = count / size;
+        }else {
+            totalPage = count / size + 1;
+        }
+        pageInfo.setTotalPage(totalPage);
+        //设置当前查询的数据
+        int index = (page -1) * pageInfo.getPageSize();
+        List<Triphotel> clist = triphotelMapper.findByIndexAndSize(index, pageInfo.getPageSize(), type, info);
+        pageInfo.setInfos(clist);
 
-        return list;
+
+        return pageInfo;
     }
 
     /**

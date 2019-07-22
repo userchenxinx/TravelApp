@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pinming.travelapp.mapper.HoststoryMapper">
+    <select id="findByIndexAndSize" parameterType="map" resultType="com.pinming.travelapp.pojo.Hoststory">
+        select * from t_c_hoststory limit #{index},#{size}
+    </select>
+
+    <select id="count" parameterType="map" resultType="int">
+        select count(*) from t_c_hoststory
+
     <select id="selectAll" resultType="com.pinming.travelapp.pojo.Hoststory">
         select * from t_c_hoststory
     </select>
@@ -8,4 +15,9 @@
     <select id="selectById" resultType="com.pinming.travelapp.pojo.Hoststory" parameterType="int">
         select * from t_c_hoststory where id=#{id}
     </select>
+
+    <select id="findById" resultType="com.pinming.travelapp.pojo.Hoststory" parameterType="int">
+        select likes from t_c_hoststory where id=#{id}
+    </select>
+
 </mapper>
