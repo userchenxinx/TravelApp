@@ -22,6 +22,17 @@ public class TravelLog {
 
     private Like like;
 
+    private Collect collect;
+
+
+    public Collect getCollect() {
+        return collect;
+    }
+
+    public void setCollect(Collect collect) {
+        this.collect = collect;
+    }
+
     public Like getLike() {
         return like;
     }

@@ -44,4 +44,14 @@ import java.util.List;
     public void delAndFlush(Integer id) {
         travelLogMapper.delAndFlush(id);
     }
+
+    @Override
+    public void addAndFlush(Integer id) {
+        travelLogMapper.addAndFlush(id);
+    }
+
+    @Override
+    public void reduceAndFlush(Integer id) {
+        travelLogMapper.reduceAndFlush(id);
+    }
 }

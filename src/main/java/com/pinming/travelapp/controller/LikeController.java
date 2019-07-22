@@ -10,7 +10,6 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,7 +22,7 @@ import java.util.List;
  **/
 @RestController
 @RequestMapping("/like")
-@Api(value = "该类旅行故事点赞相关",tags ="该类旅行故事点赞相关")
+@Api(value = "该类是旅行故事点赞相关",tags ="该类是旅行故事点赞相关")
 //解决跨域
 @CrossOrigin
 public class LikeController {
@@ -37,7 +36,7 @@ public class LikeController {
     @Transactional
     @RequestMapping("/add.do")
     @ApiOperation("该方法是判断旅行故事点赞的方法")
-    public JsonBean great(@ApiParam("该参数代表点赞表的参数") Like like2,Model model){
+    public JsonBean great(@ApiParam("该参数代表点赞表的参数") Like like2){
         //查询是否有该用户对该故事的点赞记录
         List<Like> list = likeService.findByTidAndUid(like2.getTid(),like2.getUid());
         TravelLog travelLog=null;

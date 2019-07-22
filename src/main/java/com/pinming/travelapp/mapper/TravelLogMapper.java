@@ -21,4 +21,8 @@ public interface TravelLogMapper {
     void saveAndFlush(Integer id);
 
     void delAndFlush(Integer id);
+
+    void addAndFlush(Integer id);
+
+    void reduceAndFlush(Integer id);
 }

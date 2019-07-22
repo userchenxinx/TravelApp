@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pinming.travelapp.mapper.CollectMapper">
+    <resultMap id="collectMap" type="com.pinming.travelapp.pojo.Collect">
+        <id property="id" column="id"/>
+        <result property="tid" column="tid"/>
+        <result property="uid" column="uid"/>
+    </resultMap>
+    <select id="findByTidAndUid" parameterType="integer" resultMap="collectMap">
+        select * from t_collect_d where tid = #{tid} and uid = #{uid}
+    </select>
+
+    <delete id="deleteById" parameterType="integer">
+        delete from  t_collect_d where id = #{id}
+    </delete>
+
+    <insert id="saveAndFlush" parameterType="com.pinming.travelapp.pojo.Collect">
+        insert into t_collect_d values (null,#{tid},#{uid})
+    </insert>
+
+</mapper>

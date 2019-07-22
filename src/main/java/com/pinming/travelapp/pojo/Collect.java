@@ -4,18 +4,15 @@ import io.swagger.annotations.ApiModelProperty;
 
 /**
  * @author: djs
- * @create: 2019-07-20 10:16
+ * @create: 2019-07-22 20:13
  **/
-public class Like {
-
+public class Collect {
     //@ApiModelProperty(value ="点赞表的id")
     private Integer id;
     @ApiModelProperty(value ="用户的id")
     private Integer uid;
     @ApiModelProperty(value ="旅行故事的id")
     private Integer tid;
-    /*@ApiModelProperty(value ="点赞状态id")
-    private Integer status;*/
 
     public Integer getId() {
         return id;

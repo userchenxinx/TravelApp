@@ -29,9 +29,17 @@
   <update id="saveAndFlush" parameterType="integer">
     update t_travellog_d set likenum = likenum+1 where id = #{id}
   </update>
-  
+
   <update id="delAndFlush" parameterType="integer">
     update t_travellog_d set likenum = likenum-1 where id = #{id}
+  </update>
+
+  <update id="addAndFlush" parameterType="integer">
+    update t_travellog_d set collectnum = collectnum+1 where id = #{id}
+    </update>
+
+  <update id="reduceAndFlush" parameterType="integer">
+    update t_travellog_d set collectnum = collectnum-1 where id = #{id}
   </update>
 
 </mapper>
