@@ -1,16 +1,14 @@
 package com.pinming.travelapp;
 
-import com.github.pagehelper.PageHelper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
-
-import java.util.Properties;
 
 @SpringBootApplication
 @EnableSwagger2
-public class TravelappApplication {
+public class TravelappApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         SpringApplication.run(TravelappApplication.class, args);
@@ -21,8 +19,5 @@ public class TravelappApplication {
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application){
         return application.sources(TravelappApplication.class);
     }
-
-
-
 
 }
