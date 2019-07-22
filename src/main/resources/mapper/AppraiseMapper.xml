@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pinming.travelapp.mapper.AppraiseMapper">
+  <resultMap id="BaseResultMap" type="com.pinming.travelapp.pojo.Appraise">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="ordernum" jdbcType="INTEGER" property="ordernum" />
+    <result column="appraise" jdbcType="VARCHAR" property="appraise" />
+    <result column="apmenimg" jdbcType="VARCHAR" property="apmenimg" />
+    <result column="apmen" jdbcType="VARCHAR" property="apmen" />
+    <result column="aptime" jdbcType="TIMESTAMP" property="aptime" />
+    <result column="sungrade" jdbcType="INTEGER" property="sungrade" />
+    <result column="servegra" jdbcType="INTEGER" property="servegra" />
+    <result column="placegra" jdbcType="INTEGER" property="placegra" />
+    <result column="facilitygra" jdbcType="INTEGER" property="facilitygra" />
+    <result column="surrgadegra" jdbcType="INTEGER" property="surrgadegra" />
+    <result column="respond" jdbcType="VARCHAR" property="respond" />
+    <result column="imapath" jdbcType="VARCHAR" property="imapath" />
+    <result column="imapath2" jdbcType="VARCHAR" property="imapath2" />
+    <result column="imapath3" jdbcType="VARCHAR" property="imapath3" />
+    <result column="imapath4" jdbcType="VARCHAR" property="imapath4" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, ordernum, appraise, apmenimg, apmen, aptime, sungrade, servegra, placegra, facilitygra, 
+    surrgadegra, respond, imapath, imapath2, imapath3, imapath4
+  </sql>
+
+
+</mapper>

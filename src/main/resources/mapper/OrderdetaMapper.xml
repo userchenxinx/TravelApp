@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pinming.travelapp.mapper.OrderdetaMapper">
+  <resultMap id="BaseResultMap" type="com.pinming.travelapp.pojo.Orderdeta">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="hotelname" jdbcType="VARCHAR" property="hotelname" />
+    <result column="roomnum" jdbcType="INTEGER" property="roomnum" />
+    <result column="roomtype" jdbcType="VARCHAR" property="roomtype" />
+    <result column="time" jdbcType="VARCHAR" property="time" />
+    <result column="totalprice" jdbcType="INTEGER" property="totalprice" />
+    <result column="hotelimg" jdbcType="VARCHAR" property="hotelimg" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, hotelname, roomnum, roomtype, time, totalprice, hotelimg
+  </sql>
+
+  <select id="findAllOrd" resultType="com.pinming.travelapp.pojo.Orderdeta">
+    select * from t_orderdeta
+  </select>
+</mapper>

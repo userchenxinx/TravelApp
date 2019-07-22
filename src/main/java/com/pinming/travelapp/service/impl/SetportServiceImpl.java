@@ -46,11 +46,22 @@ public class SetportServiceImpl implements SetportService {
 
     }
 
-
+    @Override
+    public R deleAddrById(int id) {
+        setportMapper.delectAddr(id);
+        return R.setOK();
+    }
 
     @Override
-    public void updateAddr(Takeadds takeadds) {
+    public R findById(int id) {
+        Takeadds takeadds = setportMapper.findById(id);
+        return R.setOK("OK",takeadds);
+    }
+
+    @Override
+    public R updateAddr(Takeadds takeadds) {
         setportMapper.update(takeadds);
+        return R.setOK("修改成功",null);
     }
 
 
