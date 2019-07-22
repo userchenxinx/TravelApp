@@ -6,7 +6,16 @@
         select * from t_c_travel where id=#{id}
     </select>
 
-    <select id="selectAll" resultType="map">
-        select * from t_c_travel
-  </select>
+
+    <select id="findByIndexAndSize" parameterType="map" resultType="com.pinming.travelapp.pojo.Hoststory">
+        select * from t_c_hoststory limit #{index},#{size}
+    </select>
+
+    <select id="count" parameterType="map" resultType="int">
+        select count(*) from t_c_hoststory
+    </select>
+
+    <select id="findById" parameterType="int" resultType="com.pinming.travelapp.pojo.Travel">
+        select likes from t_c_travel where id=#{id}
+    </select>
 </mapper>

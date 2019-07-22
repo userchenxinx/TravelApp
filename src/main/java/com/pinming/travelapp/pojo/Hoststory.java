@@ -11,7 +11,7 @@ public class Hoststory {
 
     private Date date;
 
-    private String like;
+    private String likes;
 
     private String comment;
 
@@ -49,12 +49,12 @@ public class Hoststory {
         this.date = date;
     }
 
-    public String getLike() {
-        return like;
+    public String getLikes() {
+        return likes;
     }
 
-    public void setLike(String like) {
-        this.like = like == null ? null : like.trim();
+    public void setLikes(String likes) {
+        this.likes = likes == null ? null : likes.trim();
     }
 
     public String getComment() {
