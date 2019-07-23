@@ -37,14 +37,14 @@ public class SetportController {
     public R selectByUname(String username){
         return setportService.selectByUname(username);
     }
-    // 修改个人资料
+    // 通过id查找个人资料
     @ApiOperation(value = "通过id查找个人资料",notes = "通过id查找个人资料")
     @ResponseBody
     @GetMapping("/set/findbyuid.do")
     public R selectByUid(int id){
         return setportService.findByUid(id);
     }
-    // 个人资料
+    // 修改个人资料
     @ApiOperation(value = "修改个人资料",notes = "修改个人资料")
     @ResponseBody
     @GetMapping("/set/uptaper.do")
