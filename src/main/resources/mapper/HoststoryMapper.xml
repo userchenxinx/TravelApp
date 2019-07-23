@@ -18,6 +18,4 @@
         select likes from t_c_hoststory where id=#{id}
     </select>
 
-
-
 </mapper>
