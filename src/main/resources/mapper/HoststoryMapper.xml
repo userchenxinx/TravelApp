@@ -8,8 +8,6 @@
     <select id="count" parameterType="map" resultType="int">
         select count(*) from t_c_hoststory
 
-    <select id="selectAll" resultType="com.pinming.travelapp.pojo.Hoststory">
-        select * from t_c_hoststory
     </select>
 
     <select id="selectById" resultType="com.pinming.travelapp.pojo.Hoststory" parameterType="int">

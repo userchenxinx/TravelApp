@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/comment")
 @CrossOrigin  //跨域注解
-@Api(value = "展示评论信息", tags ="评论信息")
+@Api(value = "展示评论信息", tags ="评论信息..")
 public class CommentController {
 
     @Autowired

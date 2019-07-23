@@ -10,8 +10,9 @@
     <result column="likenum" property="likenum"/>
     <result column="collecnum" property="collectnum"/>
     <result column="overview"  property="overview"/>
-      <association property="user" javaType="com.pinming.travelapp.pojo.User"></association>
+    <association property="user" javaType="com.pinming.travelapp.pojo.User"></association>
     <association property="like" javaType="com.pinming.travelapp.pojo.Like"></association>
+    <association property="collect" javaType="com.pinming.travelapp.pojo.Collect"></association>
   </resultMap>
 
   <select id="findAll" resultMap="travelLogMap">
