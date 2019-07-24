@@ -16,7 +16,7 @@
   </resultMap>
 
   <select id="findAll" resultMap="travelLogMap">
-    select t.*,u.img,l.uid,l.tid from t_travellog_d t,user u,t_like_d l where l.tid = t.id and l.uid = u.id
+    select t.*,u.img,l.uid,l.tid from t_travellog_d t left join t_like_d l on t.id = l.tid LEFT JOIN user u ON l.uid = u.id
   </select>
 
   <select id="findById" parameterType="integer" resultMap="travelLogMap">
@@ -50,3 +50,4 @@
             values (#{id,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, #{comment,jdbcType=VARCHAR},
               #{headimg,jdbcType=VARCHAR}, #{imgpath,jdbcType=VARCHAR})
           </insert>-->
+       <!-- select t.*,u.img,l.uid,l.tid from t_travellog_d t,user u,t_like_d l where l.tid = t.id and l.uid = u.id-->
