@@ -25,11 +25,24 @@ public class AppraiseController {
     public R findAllMyAppr(){
         return appraiseService.findMyAppr();
     }
-    // 评价
+    /*// 添加评论
     @ApiOperation(value = "评价",notes = "评价")
     @ResponseBody
     @GetMapping("/appr/addapprshow.do")
     public R addAprr(MyAppraise myAppraise){
         return appraiseService.addAppr(myAppraise);
+    }*/
+    // 查询订单进行评价
+    @ApiOperation(value = "查询评价的订单号",notes = "查询评价的订单号")
+    @ResponseBody
+    @GetMapping("/appr/addapprshow.do")
+    public R findByOrd(int ordernum){
+        return appraiseService.findByOrd(ordernum);
+    }
+    @ApiOperation(value = "通过订单号评价",notes = "通过订单号评价")
+    @ResponseBody
+    @GetMapping("/appr/updaapprshow.do")
+    public R updateAppr(MyAppraise myAppraise){
+        return appraiseService.updateAppr(myAppraise);
     }
 }

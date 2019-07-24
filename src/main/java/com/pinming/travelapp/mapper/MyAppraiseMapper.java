@@ -9,7 +9,11 @@ import java.util.List;
 public interface MyAppraiseMapper {
     // 展示我的评价
     List<MyAppraise> findAllAppr();
-    // 通过订单号撰写评价
+    // 添加订单
     void addAppr(MyAppraise myAppraise);
+    // 通过订单号撰写评价
+    MyAppraise findByOrd(int ordernum);
+
+    void updateAppr(MyAppraise myAppraise);
 
 }

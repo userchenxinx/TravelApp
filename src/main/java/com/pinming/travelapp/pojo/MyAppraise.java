@@ -2,10 +2,21 @@ package com.pinming.travelapp.pojo;
 
 public class MyAppraise {
     private Integer id;
-    private String ordernum;
+    private Integer ordernum;
     private String imapath;
 
     private String myappraise;
+
+    // 1表示已评价0表示未评价
+    private Integer status;
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
     public Integer getId() {
         return id;
@@ -15,11 +26,11 @@ public class MyAppraise {
         this.id = id;
     }
 
-    public String getOrdernum() {
+    public Integer getOrdernum() {
         return ordernum;
     }
 
-    public void setOrdernum(String ordernum) {
+    public void setOrdernum(Integer ordernum) {
         this.ordernum = ordernum;
     }
 

@@ -13,7 +13,7 @@
     select * from t_setport
   </select>
   <select id="findByUname" resultType="com.pinming.travelapp.pojo.User">
-    select img username, sex,tel,birthday,IDcard,place,city,email from user where username=#{username}
+    select img, username, sex,tel,birthday,IDcard,place,city,email from user where username=#{username}
   </select>
     <select id="findByUid" parameterType="int" resultType="com.pinming.travelapp.pojo.User">
     select * from user where id=#{id}

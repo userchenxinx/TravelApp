@@ -8,6 +8,10 @@ public interface AppraiseService {
 
     //我的好评
     R findMyAppr();
-    // 编写好评
+    // 添加好评
     R addAppr(MyAppraise myAppraise);
+    // 编写好评
+    R findByOrd (int ordernum);
+    R updateAppr(MyAppraise myAppraise);
+
 }

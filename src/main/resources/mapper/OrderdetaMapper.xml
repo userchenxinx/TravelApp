@@ -9,9 +9,10 @@
     <result column="time" jdbcType="VARCHAR" property="time" />
     <result column="totalprice" jdbcType="INTEGER" property="totalprice" />
     <result column="hotelimg" jdbcType="VARCHAR" property="hotelimg" />
+    <result column="status" jdbcType="INTEGER" property="status" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, hotelname, roomnum, roomtype, time, totalprice, hotelimg
+    id, hotelname, roomnum, roomtype, time, totalprice, hotelimg, status
   </sql>
 
   <select id="findAllOrd" resultType="com.pinming.travelapp.pojo.Orderdeta">

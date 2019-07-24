@@ -6,14 +6,23 @@
     <result column="ordernum" jdbcType="INTEGER" property="ordernum" />
     <result column="imapath" jdbcType="VARCHAR" property="imapath" />
     <result column="myappraise" jdbcType="VARCHAR" property="myappraise" />
+    <result column="status" jdbcType="INTEGER" property="status" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, ordernum, imapath, myappraise
+    id, ordernum, imapath, myappraise, status
   </sql>
   <select id="findAllAppr" resultType="com.pinming.travelapp.pojo.MyAppraise">
-    select ordernum, imapath, myappraise from t_myappr
+    select ordernum, imapath, myappraise, status from t_myappr
   </select>
   <insert id="addAppr" parameterType="MyAppraise">
-    insert into t_myappr values (null,#{ordernum},#{imapath},#{myappraise})
+    insert into t_myappr values (null,#{ordernum},#{imapath},#{myappraise},#{status})
   </insert>
+
+  <select id="findByOrd" parameterType="int" resultType="myappraise">
+    select * from t_myappr where ordernum=#{ordernum}
+  </select>
+
+  <update id="updateAppr" parameterType="myappraise">
+    update t_myappr set myappraise=#{myappraise},status=#{status} where ordernum=#{ordernum}
+  </update>
 </mapper>

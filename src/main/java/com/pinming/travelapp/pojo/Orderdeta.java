@@ -14,6 +14,16 @@ public class Orderdeta {
     private Integer totalprice;
 
     private String hotelimg;
+     // 订单状态 1表示订单待支付 0表示支付成功 2表示订单超时
+    private Integer status;
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
     public Integer getId() {
         return id;

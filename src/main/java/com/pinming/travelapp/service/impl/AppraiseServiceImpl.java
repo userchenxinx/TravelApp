@@ -25,4 +25,16 @@ public class AppraiseServiceImpl implements AppraiseService {
         myAppraiseMapper.addAppr(myAppraise);
         return R.setOK("OK",null);
     }
+
+    @Override
+    public R findByOrd(int ordernum) {
+        MyAppraise myAppraise = myAppraiseMapper.findByOrd(ordernum);
+        return R.setOK("OK",null);
+    }
+
+    @Override
+    public R updateAppr(MyAppraise myAppraise) {
+        myAppraiseMapper.updateAppr(myAppraise);
+        return R.setOK("评价成功",null);
+    }
 }
