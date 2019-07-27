@@ -11,6 +11,7 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,7 +35,7 @@ public class LikeController {
 
     //添加事务支持
     @Transactional
-    @RequestMapping("/add.do")
+    @GetMapping("/add.do")
     @ApiOperation("该方法是判断旅行故事点赞的方法")
     public JsonBean great(@ApiParam("该参数代表点赞表的参数") Like like2){
         //查询是否有该用户对该故事的点赞记录
